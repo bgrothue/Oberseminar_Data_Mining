@@ -1,0 +1,7 @@
+Creating random data partitions
+Analysts need an unbiased evaluation of the quality of their machine learning models. To get
+this, they partition the available data into two parts. They use one part to build the machine
+learning model and retain the remaining data as "hold out" data. After building the model,
+they evaluate the model's performance on the hold out data. This recipe shows you how to
+partition data. It separately addresses the situation when the target variable is numeric and
+when it is categorical. It also covers the process of creating two partitions or three.
