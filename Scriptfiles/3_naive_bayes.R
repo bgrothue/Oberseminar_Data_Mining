@@ -1,6 +1,6 @@
 #0. Arbeitsverzeichnis aufräumen und Pfad setzen
 rm(list = ls())
-setwd(dr = "Dokumente/4._Semester/Oberseminar_Data_Mining/")
+setwd(dir = "~Dokumente/4._Semester/Oberseminar_Data_Mining/")
 
 #1. nötige Packages laden
 library(e1071)
