@@ -1,25 +1,34 @@
 #0. Arbeitsverzeichnis aufräumen und pfad setzen
 rm(list = ls())
-setwd(dr = "Dokumente/4._Semester/Oberseminar_Data_Mining/")
+setwd(dir = "~/Dokumente/4._Semester/Oberseminar_Data_Mining/Datasets/")
+getwd()
 
-#1. load requiered packages
+#1. nötige Packages laden
 library(ROCR)
 
-#2.read data
+#2. Datensatz einlesen
 dat <- read.csv("roc-example-1.csv")
-#show data
+
+# Ersten sechs Einträge ausgeben
 head(dat)
-#3. Create the prediction object:
+
+#3. Erzeugen des prediction-Objekts
 pred <- prediction(dat$prob, dat$class)
-#4. Create the performance object:
+
+str(pred)
+
+#4. Erzeugen des performance- Objekts
 perf <- performance(pred, "tpr", "fpr")
-#5. Plot the chart:
+
+str(perf)
+
+#5. Ausgeben der Grenzwertoptimierungskurve
 plot(perf)
+
 #45 grad Linie zum vergleich
 lines( par()$usr[1:2], par()$usr[3:4] )
 
-#6. Find the cutoff values for various true positive rates. Extract the relevant data from
-#the perf object into a data frame prob.cuts :
+#6. Extrahieren der Schwellenwerte (cutoff-values) aus dem performance-Objekt
 prob.cuts <- data.frame(cut=perf@alpha.values[[1]], fpr=perf@x.values[[1]], tpr=perf@y.values[[1]])
 head(prob.cuts)
 tail(prob.cuts)

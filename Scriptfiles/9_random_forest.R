@@ -1,6 +1,6 @@
 #0. Arbeitsverzeichnis aufräumen und pfad setzen
 rm(list = ls())
-setwd(dr = "Dokumente/4._Semester/Oberseminar_Data_Mining/")
+setwd(dir = "~/Dokumente/4._Semester/Oberseminar_Data_Mining/Datasets/")
 
 #1. load requiered packages
 library(randomForest)
